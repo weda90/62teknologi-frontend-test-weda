@@ -36,7 +36,19 @@ async function getBusinessDetail(idOrAlias: string): Promise<any> {
   }
 }
 
+async function getBusinessReviews(idOrAlias: string): Promise<any> {
+  try {
+    const response: AxiosResponse = await axiosInstance.get(`/${idOrAlias}/reviews?limit=20&sort_by=yelp_sort`);
+    
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching business reviews:', error);
+    throw error;
+  }
+}
+
 export default {
   getBusinesses,
   getBusinessDetail,
+  getBusinessReviews,
 };

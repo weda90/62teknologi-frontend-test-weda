@@ -1,6 +1,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 import ListBusiness from '../views/ListBusiness.vue';
+import DetailBusiness from '../views/DetailBusiness.vue';
 
 const routes = [
   // {
@@ -22,6 +23,11 @@ const routes = [
     name: 'ListBusiness',
     component: ListBusiness,
   },
+  {
+    path: '/detail/:id',
+    name: 'DetailBusiness',
+    component: DetailBusiness
+  }
 ]
 
 const router = createRouter({
